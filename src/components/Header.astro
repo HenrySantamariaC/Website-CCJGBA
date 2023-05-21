@@ -1,25 +1,59 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import ResponsiveBlock from "../layouts/ResponsiveBlock.astro";
+import HeaderLink from "./HeaderLink.astro";
+
+let menuOptions = [
+  {
+    label: "Inicio",
+    path: "/",
+  },
+  {
+    label: "Servicios",
+    path: "/servicios",
+  },
+  {
+    label: "Nosotros",
+    path: "/nosotros",
+  },
+  {
+    label: "Condecoraciones",
+    path: "/condecoraciones",
+  },
+  {
+    label: "Novedades",
+    path: "/blog",
+  },
+  {
+    label: "Contáctanos",
+    path: "/contacto",
+  },
+  {
+    label: "WPS",
+    path: "/",
+  },
+];
 ---
 
-<header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+<header class="absolute top-0 z-20 w-full">
+  <ResponsiveBlock>
+    <nav class="flex justify-between text-white p-2">
+      <HeaderLink href="/">
+        <img src="/images/WhiteLogo.svg" alt="" class="h-full" />
+      </HeaderLink>
+      <ul class="flex gap-2">
+        {
+          menuOptions.map((item) => (
+            <li class="flex items-center">
+              <HeaderLink href={item.path}>{item.label}</HeaderLink>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </ResponsiveBlock>
 </header>
 <style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
+  nav {
+    height: 80px;
+  }
 </style>

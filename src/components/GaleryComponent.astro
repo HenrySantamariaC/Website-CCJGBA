@@ -1,0 +1,73 @@
+---
+import ResponsiveBlock from "../layouts/ResponsiveBlock.astro";
+
+const dataGalery = [
+  {
+    title: "Campos Deportivos",
+    imgPath: "/images/photo-03.jpg",
+  },
+  {
+    title: "Salas de reunion",
+    imgPath: "/images/photo-04.png",
+  },
+  {
+    title: "Sala de computo",
+    imgPath: "/images/photo-05.jpg",
+  },
+  {
+    title: "Piscina",
+    imgPath: "/images/photo-06.webp",
+  },
+];
+---
+
+<ResponsiveBlock>
+  <div class="pt-20 flex flex-col gap-8">
+    <h6 class="font-bold text-center text-3xl text-secondary">Galeria</h6>
+
+    <div class="swiper swiper-galery h-[600px] rounded-3xl">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        {
+          dataGalery.map((item) => (
+            <div class="swiper-slide">
+              <img
+                src={item.imgPath}
+                alt={item.title}
+                class="w-full h-full object-cover"
+              />
+            </div>
+          ))
+        }
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev text-white"></div>
+      <div class="swiper-button-next text-white"></div>
+    </div>
+  </div>
+
+  <script>
+    import Swiper from "swiper";
+    import "swiper/css/bundle";
+
+    const swiper = new Swiper(".swiper-galery", {
+      direction: "horizontal",
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+  <style>
+    .swiper-galery {
+      width: 100%;
+    }
+  </style>
+</ResponsiveBlock>

@@ -1,0 +1,48 @@
+---
+import ResponsiveBlock from "../layouts/ResponsiveBlock.astro";
+import ServiceCard from "./ServiceCard.astro";
+
+const dataService = [
+  {
+    category: "Servicios",
+    title: "Campos Deportivos",
+    imgPath: "/images/photo-03.jpg",
+    url: "/servicios/campos-deportivos",
+  },
+  {
+    category: "Servicios",
+    title: "Salas de reunion",
+    imgPath: "/images/photo-04.png",
+    url: "/servicios/salas-reunion",
+  },
+  {
+    category: "Servicios",
+    title: "Sala de computo",
+    imgPath: "/images/photo-05.jpg",
+    url: "/servicios/sala-computo",
+  },
+  {
+    category: "Servicios",
+    title: "Piscina",
+    imgPath: "/images/photo-06.webp",
+    url: "/servicios/piscina",
+  },
+];
+---
+
+<ResponsiveBlock>
+  <div class="pt-20 flex flex-col gap-8">
+    <h6 class="font-bold text-center text-3xl text-secondary">
+      Nuestros Servicios
+    </h6>
+    <p class="mx-auto text-center w-9/12">
+      La Casa Comunal de la Juventud brinda servicios de calidad y accesibles
+      para que puedas compartir en familia, amigos. Mediante sus ambientes
+      podrás realizar tu deporte favorito, realizar eventos, dictar clases,
+      conferencias, premiaciones. ¡Te esperamos!
+    </p>
+    <div class="grid grid-cols-4 gap-5">
+      {dataService.map((item) => <ServiceCard service={item} />)}
+    </div>
+  </div>
+</ResponsiveBlock>

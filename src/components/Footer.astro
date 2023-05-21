@@ -1,13 +1,55 @@
 ---
+import ResponsiveBlock from "../layouts/ResponsiveBlock.astro";
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer class="bg-secondary p-0 mt-20">
+  <ResponsiveBlock>
+    <div class="pt-20">
+      <div class="flex flex-col gap-5 mx-auto">
+        <img src="/images/WhiteLogo.svg" alt="" class="w-[300px] mx-auto" />
+        <p class="p-2 w-1/2 mx-auto text-neutral-300">
+          Casa Comunal de la Juventud – GBA propiedad privada de servicio
+          público. Es un ensayo de educación espontánea y de cultura, sin fines
+          de lucro.
+        </p>
+        <div class="flex justify-between mt-10">
+          <span class="text-xs text-neutral-300"
+            >&copy {today.getFullYear()} Casa Comunal de la Juventud – GBA. Todos
+            los derechos reservados</span
+          >
+          <div class="flex gap-3">
+            <a
+              href="https://www.facebook.com/CasaComunalCCJ/"
+              rel="nofollow"
+              target="_blank"
+            >
+              <img src="/images/facebook.svg" alt="" class="w-5" />
+            </a>
+            <a
+              href="https://api.whatsapp.com/message/LCQYEQNKYQYMA1?autoload=1&app_absent=0"
+              rel="nofollow"
+              target="_blank"
+            >
+              <img src="/images/whatsapp.svg" alt="" class="w-5" />
+            </a>
+          </div>
+        </div>
+        <hr />
+        <a
+          href="https://github.com/HenrySantamariaC"
+          target="_blank"
+          class="text-white/50 text-xs pb-5"
+          >Desarrollado por <b class="text-white/50">Henry SC</b></a
+        >
+      </div>
+    </div>
+  </ResponsiveBlock>
 </footer>
+
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
 </style>

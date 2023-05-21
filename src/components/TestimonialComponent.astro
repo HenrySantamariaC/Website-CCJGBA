@@ -1,0 +1,101 @@
+---
+import ResponsiveBlock from "../layouts/ResponsiveBlock.astro";
+
+const dataGalery = [
+  {
+    name: "Veronica Lima",
+    description: "Docente",
+    testimonial:
+      "Estamos contentos con el trato y el ambiente que nos ofrece la casa comunal , los niños se puedan relajar y divertir realizando actividades físicas.",
+    imgPath: "https://xsgames.co/randomusers/assets/avatars/female/30.jpg",
+  },
+  {
+    name: "Abel Ushiñahua",
+    description: "Docente",
+    testimonial:
+      "Vengo trabajando aquí en la casa comunal  todo este año , la casa comunal me permite enseñar todos mis conocimientos a los alumnos y el espacio es muy amplio, ya que, tiene campos con Grass sintético y plataformas donde se pueden aplicar diversos juegos deportivos. ",
+    imgPath: "https://xsgames.co/randomusers/assets/avatars/male/40.jpg",
+  },
+  {
+    name: "Karina Falen",
+    description: "Docente",
+    testimonial:
+      "Recien estoy llegando a la casa comunal, he notado el cambio que ha dado a nivel de infraestructura, atencion y seguridad. Es por eso que vengo a solicitar sus servicios para poder instruir en el deporte a mis alumnos y que puedan divertirse.",
+    imgPath: "https://xsgames.co/randomusers/assets/avatars/female/50.jpg",
+  },
+];
+---
+
+<ResponsiveBlock>
+  <div class="pt-20 flex flex-col gap-8">
+    <h6 class="font-bold text-center text-3xl text-secondary">Testimonios</h6>
+
+    <div class="swiper swiper-testimonial w-7/12">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        {
+          dataGalery.map((item) => (
+            <>
+              <div class="swiper-slide bg-white flex flex-col gap-3 p-5">
+                <div class="flex justify-between">
+                  <div class="flex gap-3">
+                    <img
+                      src={item.imgPath}
+                      alt={item.name}
+                      class="w-h-20 h-20 aspect-square rounded-full"
+                    />
+                    <div class="flex flex-col align-super">
+                      <h6 class="font-bold text-lg">{item.name}</h6>
+                      <p class="text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                  <img src="/images/TestimonialSvg.svg" width="48" alt="pin" />
+                </div>
+                <p>{item.testimonial}</p>
+                <span class="text-neutral-500 text-xs flex gap-2">
+                  <img src="/images/LocarionSvg.svg" width="12" alt="" /> Casa
+                  Comunal de la Juventud
+                </span>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+
+    <script>
+      import Swiper from "swiper";
+      import "swiper/css/bundle";
+
+      const swiper = new Swiper(".swiper-testimonial", {
+        direction: "horizontal",
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+        grabCursor: true,
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            shadow: false,
+            translate: ["-120%", 0, -500],
+          },
+          next: {
+            shadow: false,
+            translate: ["120%", 0, -500],
+          },
+        },
+      });
+    </script>
+  </div>
+</ResponsiveBlock>
+
+<style>
+  .testimonial-block {
+    background-color: #011936;
+    background-image: url("/images/photo-08.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+const { service } = Astro.props;
+---
+
+<a
+  href={service.url}
+  class="component rounded-3xl aspect-square overflow-hidden text-white relative"
+>
+  <img
+    src={service.imgPath}
+    alt=""
+    class="object-cover absolute h-full w-full"
+  />
+  <div class="flex flex-col p-4 justify-between w-full h-full absolute">
+    <span></span>
+    <div class="bg-white p-3 rounded-3xl">
+      <span class="text-neutral-500 text-xs">{service.category}</span>
+      <h2 class="font-bold text-black text-lg">{service.title}</h2>
+    </div>
+  </div>
+</a>
+
+<style>
+  .component:hover {
+    transform: scale(1.01);
+  }
+</style>
