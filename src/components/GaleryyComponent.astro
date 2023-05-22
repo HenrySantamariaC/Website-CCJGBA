@@ -1,0 +1,99 @@
+---
+import ResponsiveBlock from "../layouts/ResponsiveBlock.astro";
+
+const dataGalery = [
+  {
+    title: "Campos Deportivos",
+    imgPath: "/images/photo-03.webp",
+  },
+  {
+    title: "Salas de reunion",
+    imgPath: "/images/photo-04.webp",
+  },
+  {
+    title: "Sala de computo",
+    imgPath: "/images/photo-05.webp",
+  },
+  {
+    title: "Piscina",
+    imgPath: "/images/photo-06.webp",
+  },
+];
+---
+
+<ResponsiveBlock>
+  <div class="pt-20 grid grid-cols-2 gap-8">
+    <div class="flex items-center">
+      <div class="flex flex-col gap-5 w-10/12 mx-auto">
+        <span class="text-secondary text-3xl font-bold"
+          >Compartimos experiencias</span
+        >
+        <p>
+          Uniendo momentos especiales y creando recuerdos inolvidables.
+          Capturamos la emoción y la alegría de nuestros clientes en nuestra
+          galería de fotos, donde disfrutan de actividades deportivas, sociales
+          y culturales en nuestros distintos espacios.
+        </p>
+      </div>
+    </div>
+    <div
+      class="w-10/12 mx-auto py-5 rounded-3xl overflow-hidden shadow-2xl shadow-slate-500"
+    >
+      <div class="flex items-center gap-5 p-5">
+        <img
+          src="/public/images/photo-01.webp"
+          alt="Galeria de fotos"
+          class="w-20 rounded-full aspect-square object-cover"
+        />
+        <div class="flex flex-col">
+          <span class="text-lg">Casa Comunal de la Juventud</span>
+          <span class="text-xs"
+            ><i class="ico-location"></i> Chiclayo, Lambayeque</span
+          >
+        </div>
+      </div>
+      <div class="swiper swiper-galery aspect-[4/3]">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          {
+            dataGalery.map((item) => (
+              <div class="swiper-slide">
+                <img
+                  src={item.imgPath}
+                  alt={item.title}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            ))
+          }
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="py-5 text-center">
+        <span class="text-lg text-secondary uppercase">Galeria de fotos</span>
+      </div>
+    </div>
+  </div>
+</ResponsiveBlock>
+
+<script>
+  import Swiper from "swiper";
+  import "swiper/css/bundle";
+
+  const swiper = new Swiper(".swiper-galery", {
+    direction: "horizontal",
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+  });
+</script>
+
+<style>
+  .swiper-galery {
+    width: 100%;
+  }
+</style>

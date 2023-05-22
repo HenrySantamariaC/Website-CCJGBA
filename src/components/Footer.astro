@@ -1,13 +1,14 @@
 ---
 import ResponsiveBlock from "../layouts/ResponsiveBlock.astro";
+import Imagotipo from "./React/Imagotipo";
 const today = new Date();
 ---
 
-<footer class="bg-secondary p-0 mt-20">
+<footer class="bg-secondary p-0 mt-20 select-none">
   <ResponsiveBlock>
     <div class="pt-20">
       <div class="flex flex-col gap-5 mx-auto">
-        <img src="/images/WhiteLogo.svg" alt="" class="w-[300px] mx-auto" />
+        <Imagotipo className="fill-white mx-auto w-80" />
         <p class="p-2 w-1/2 mx-auto text-neutral-300">
           Casa Comunal de la Juventud – GBA propiedad privada de servicio
           público. Es un ensayo de educación espontánea y de cultura, sin fines
@@ -18,20 +19,20 @@ const today = new Date();
             >&copy {today.getFullYear()} Casa Comunal de la Juventud – GBA. Todos
             los derechos reservados</span
           >
-          <div class="flex gap-3">
+          <div class="flex gap-3 text-white">
             <a
               href="https://www.facebook.com/CasaComunalCCJ/"
               rel="nofollow"
               target="_blank"
             >
-              <img src="/images/facebook.svg" alt="" class="w-5" />
+              <i class="ico-facebook"></i>
             </a>
             <a
               href="https://api.whatsapp.com/message/LCQYEQNKYQYMA1?autoload=1&app_absent=0"
               rel="nofollow"
               target="_blank"
             >
-              <img src="/images/whatsapp.svg" alt="" class="w-5" />
+              <i class="ico-whatsapp"></i>
             </a>
           </div>
         </div>

@@ -27,10 +27,6 @@ let menuOptions = [
     label: "Contáctanos",
     path: "/contacto",
   },
-  {
-    label: "WPS",
-    path: "/",
-  },
 ];
 ---
 
@@ -48,6 +44,14 @@ let menuOptions = [
             </li>
           ))
         }
+        <li class="flex items-center">
+          <HeaderLink
+            href="https://api.whatsapp.com/message/LCQYEQNKYQYMA1?autoload=1&app_absent=0"
+            target="_blanck"
+          >
+            <i class="ico-whatsapp text-2xl"></i>
+          </HeaderLink>
+        </li>
       </ul>
     </nav>
   </ResponsiveBlock>
