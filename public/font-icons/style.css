@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'IconPack';
   src:
-    url('fonts/IconPack.ttf?7451sn') format('truetype'),
-    url('fonts/IconPack.woff?7451sn') format('woff'),
-    url('fonts/IconPack.svg?7451sn#IconPack') format('svg');
+    url('fonts/IconPack.ttf?dgo6mj') format('truetype'),
+    url('fonts/IconPack.woff?dgo6mj') format('woff'),
+    url('fonts/IconPack.svg?dgo6mj#IconPack') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,12 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ico-close:before {
+  content: "\e90c";
+}
+.ico-menu:before {
+  content: "\e90b";
+}
 .ico-ambiental:before {
   content: "\e900";
 }

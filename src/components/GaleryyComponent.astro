@@ -22,9 +22,11 @@ const dataGalery = [
 ---
 
 <ResponsiveBlock>
-  <div class="pt-20 grid grid-cols-2 gap-8">
+  <div class="pt-20 grid lg:grid-cols-2 grid-cols-1 gap-8">
     <div class="flex items-center">
-      <div class="flex flex-col gap-5 w-10/12 mx-auto">
+      <div
+        class="flex flex-col gap-5 lg:text-start text-center lg:w-10/12 mx-auto"
+      >
         <span class="text-secondary text-3xl font-bold"
           >Compartimos experiencias</span
         >
@@ -37,16 +39,16 @@ const dataGalery = [
       </div>
     </div>
     <div
-      class="w-10/12 mx-auto py-5 rounded-3xl overflow-hidden shadow-2xl shadow-slate-500"
+      class="sm:w-10/12 w-full mx-auto py-5 rounded-3xl overflow-hidden shadow-2xl shadow-slate-500"
     >
       <div class="flex items-center gap-5 p-5">
         <img
-          src="/public/images/photo-01.webp"
+          src="/images/photo-01.webp"
           alt="Galeria de fotos"
-          class="w-20 rounded-full aspect-square object-cover"
+          class="lg:w-20 w-14 rounded-full aspect-square object-cover"
         />
         <div class="flex flex-col">
-          <span class="text-lg">Casa Comunal de la Juventud</span>
+          <span class="text-base">Casa Comunal de la Juventud</span>
           <span class="text-xs"
             ><i class="ico-location"></i> Chiclayo, Lambayeque</span
           >

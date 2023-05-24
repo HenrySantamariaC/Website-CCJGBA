@@ -35,13 +35,13 @@ const dataService = [
     <h6 class="font-bold text-center text-3xl text-secondary">
       Nuestros Servicios
     </h6>
-    <p class="mx-auto text-center w-9/12">
+    <p class="mx-auto text-center lg:w-9/12 w-full">
       La Casa Comunal de la Juventud brinda servicios de calidad y accesibles
       para que puedas compartir en familia, amigos. Mediante sus ambientes
       podrás realizar tu deporte favorito, realizar eventos, dictar clases,
       conferencias, premiaciones. ¡Te esperamos!
     </p>
-    <div class="grid grid-cols-4 gap-5">
+    <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
       {dataService.map((item) => <ServiceCard service={item} />)}
     </div>
   </div>

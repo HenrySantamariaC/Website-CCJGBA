@@ -1,6 +1,8 @@
 ---
 import ResponsiveBlock from "../layouts/ResponsiveBlock.astro";
 import HeaderLink from "./HeaderLink.astro";
+import Imagotipo from "./React/Imagotipo";
+import NavBar from "./React/NavBar";
 
 let menuOptions = [
   {
@@ -32,27 +34,11 @@ let menuOptions = [
 
 <header class="absolute top-0 z-20 w-full">
   <ResponsiveBlock>
-    <nav class="flex justify-between text-white p-2">
+    <nav class="flex justify-between items-center gap-4 text-white sm:p-2">
       <HeaderLink href="/">
-        <img src="/images/WhiteLogo.svg" alt="" class="h-full" />
+        <Imagotipo className="fill-white sm:w-80 w-full" />
       </HeaderLink>
-      <ul class="flex gap-2">
-        {
-          menuOptions.map((item) => (
-            <li class="flex items-center">
-              <HeaderLink href={item.path}>{item.label}</HeaderLink>
-            </li>
-          ))
-        }
-        <li class="flex items-center">
-          <HeaderLink
-            href="https://api.whatsapp.com/message/LCQYEQNKYQYMA1?autoload=1&app_absent=0"
-            target="_blanck"
-          >
-            <i class="ico-whatsapp text-2xl"></i>
-          </HeaderLink>
-        </li>
-      </ul>
+      <NavBar options={menuOptions} client:load />
     </nav>
   </ResponsiveBlock>
 </header>
